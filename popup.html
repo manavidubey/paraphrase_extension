@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gemini Paraphrase Assistant</title>
+  <style>
+    body {
+      width: 400px;
+      padding: 20px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      resize: vertical;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #4285f4;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    #response {
+      margin-top: 15px;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      min-height: 100px;
+      white-space: pre-wrap;
+      background-color: #fff;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .loading {
+      display: none;
+      text-align: center;
+      margin: 15px 0;
+      color: #666;
+      font-size: 14px;
+    }
+    .copy-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #34a853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    .copy-btn:hover {
+      background-color: #2d9249;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .header img {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    .header h1 {
+      font-size: 18px;
+      margin: 0;
+      color: #202124;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="icon48.png" alt="Extension Icon">
+      <h1>Gemini Paraphrase Assistant</h1>
+    </div>
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+    <button id="paraphraseBtn">Paraphrase & Check Grammar</button>
+    <div id="loading" class="loading">Processing...</div>
+    <div id="response"></div>
+    <button id="copyBtn" class="copy-btn">Copy to Clipboard</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
