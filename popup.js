@@ -1,4 +1,4 @@
-// API configuration
+
 const API_KEY = 'AIzaSyAJYSMNx_pFcm4E5htn4M3ZMdwksHNYL5k';
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
@@ -43,7 +43,7 @@ document.getElementById('paraphraseBtn').addEventListener('click', async () => {
     }
 
     const data = await response.json();
-    console.log('Raw API Response:', data); // Debug log
+    console.log('Raw API Response:', data);
     
     if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
       const resultText = data.candidates[0].content.parts[0].text.trim();
@@ -62,7 +62,6 @@ document.getElementById('paraphraseBtn').addEventListener('click', async () => {
   }
 });
 
-// Add copy button functionality
 document.getElementById('copyBtn').addEventListener('click', () => {
   const responseText = document.getElementById('response').textContent;
   navigator.clipboard.writeText(responseText).then(() => {
